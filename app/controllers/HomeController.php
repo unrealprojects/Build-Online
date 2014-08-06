@@ -17,6 +17,7 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
+        Catalog::get();
 		return View::make('hello');
 	}
 
