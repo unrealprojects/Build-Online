@@ -16,5 +16,13 @@
 //	return View::make('hello');
 //});
 
+//Route::controller('/','MainPageController');
 
-Route::get('/', 'HomeController@showWelcome');
+//Route::resource('frontend.MainPageController', 'PhotoCommentController');
+
+Route::get('/', 'MainPageController@showWelcome');
+//Route::group(array('prefix' => 'frontend'), function()
+//{
+//    # Admin Dashboard
+//    Route::controller('/', 'MainPageController');
+//});

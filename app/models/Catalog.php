@@ -1,4 +1,4 @@
 <?php
 class Catalog extends Eloquent {
-    protected $table = 'catalog';
+    protected $table = 'test';
 }

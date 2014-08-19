@@ -1,6 +1,6 @@
 <?php
 
-class HomeController  {
+class MainPageController {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -17,8 +17,7 @@ class HomeController  {
 
 	public function showWelcome()
 	{
-    //    Catalog::get();
-		return View::make('hello');
+		//return View::make('hello');
 	}
 
 }
