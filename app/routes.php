@@ -11,18 +11,22 @@
 |
 */
 
-//Route::get('/', function()
-//{
-//	return View::make('hello');
-//});
 
-//Route::controller('/','MainPageController');
+/**
+ * Создание маршрутов frontend сайта
+ */
 
-//Route::resource('frontend.MainPageController', 'PhotoCommentController');
+/* Маршруты из таблицы routes*/
+$routes_db=Routes::get()->toArray();
 
-Route::get('/', 'MainPageController@showWelcome');
-//Route::group(array('prefix' => 'frontend'), function()
-//{
-//    # Admin Dashboard
-//    Route::controller('/', 'MainPageController');
-//});
+/* Временные маршруты*/
+$routes_static = [
+    ['path'=>'/as2','controller'=>'MainPageController','function'=>'showWelcome3']
+];
+/* Слияние маршрутов */
+$routes = array_merge($routes_db,$routes_static);
+
+/* Перебор маршрутов и инициализация */
+foreach($routes as $route){
+    Route::get($route['path'], $route['controller'].'@'.$route['function']);
+}
